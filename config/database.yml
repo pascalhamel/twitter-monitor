@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: twitter-monitor
+  username: postgres
+  password: root
+  host: localhost
