@@ -1,5 +1,6 @@
-PATH
-  remote: ../crowdbase
+GIT
+  remote: https://github.com/pascalhamel/crowdbase.git
+  revision: 509466e05150de62ed1b461e77f5659270bd3851
   specs:
     crowdbase (0.1.1)
       activesupport (>= 3.2)
