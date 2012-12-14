@@ -7,3 +7,4 @@ gem "activerecord"
 gem "pg"
 gem "crowdbase", :git => 'https://github.com/pascalhamel/crowdbase.git'
 gem "jbuilder"
+gem "thin"
