@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :crowdbase_access_token
       t.string :crowdbase_refresh_token
       t.datetime :crowdbase_expiration_date
-      t.string :crowdbase_domain
+      t.string :crowdbase_subdomain
 
       t.timestamps
     end
