@@ -17,6 +17,12 @@ class Api::V1::CrowdbaseUsersController < ApplicationController
       Crowdbase::Client.instance.client_secret = ENV['CROWDBASE_CLIENT_SECRET'] if ENV['CROWDBASE_CLIENT_SECRET']
       Crowdbase::Client.instance.subdomain = params[:subdomain]
       Crowdbase::Client.instance.authorize!(:username => params[:username], :password => params[:password])
+      puts "Client ID: #{Crowdbase::Client.instance.client_id}"
+      puts "Client Secret: #{Crowdbase::Client.instance.client_secret}"
+      puts "Client Subdomain: #{Crowdbase::Client.instance.subdomain}"
+      puts "Client Username: #{params[:username]}"
+      puts "Client PW: #{params[:password]}"
+      puts "Access token: #{Crowdbase::Client.instance.access_token}"
 
       raise Exception.new(:message => "Impossible to register user to Crowdbase.") unless Crowdbase::Client.instance.user_id && Crowdbase::Client.instance.access_token
 
