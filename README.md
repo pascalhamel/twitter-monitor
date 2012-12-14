@@ -33,13 +33,16 @@ CROWDBASE_CLIENT_SECRET
 ### 4. Create the database and the tables.
 
 Create a database, fill the database.yml file and run:
-    rake db:migrate
-
+```sh
+rake db:migrate
+```
 
 ### 5. Start the daemon and the Rails server.
 
 To start the daemon, simply run this rake task and specify the correct API:
-    rake monitor_twitter api=crowdbase
+```sh
+rake monitor_twitter api=crowdbase
+```
 
 ## How to use for Crowdbase
 ### 1. Hook your Twitter account with your Crowdbase account.
@@ -50,8 +53,11 @@ curl --data "twitter_user_id=123456789&username=user@user.com&password=PASSWORD&
 
 ### 2. Send tweets to the monitoring account.
 There are three possible actions :
-#### Post a note: Send a tweet to @YOUR_MONITORING_ACCOUNT with no link and that does not end with an interrogation point.
-#### Post a question: Send a tweet to @YOUR_MONITORING_ACCOUNT with no link that ends with an interrogation point.
-#### Post a link: Send a tweet to @YOUR_MONITORING_ACCOUNT with one or more links.
+**Post a note:** Send a tweet to @YOUR_MONITORING_ACCOUNT that does not end with an interrogation point and contains no link.
+*@YOUR_MONITORING_ACCOUNT This will post a note to Crowdbase in section #topic.*
+**Post a question:** Send a tweet to @YOUR_MONITORING_ACCOUNT that ends with an interrogation point but contains no link.
+*@YOUR_MONITORING_ACCOUNT This will ask a question in Crowdbase in section #topic?*
+**Post a link:** Send a tweet to @YOUR_MONITORING_ACCOUNT with one or more links.
+*@YOUR_MONITORING_ACCOUNT This will post a link to Crowdbase in section #topic http://www.crowdbase.com*
 
 In any case, the daemon tries to match hashtags with existing topics and associates the post with the first one found.
